@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Voice for You, Santa 🎧</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="voice-page">
+
+  <div class="voice-container">
+    <h1 class="voice-heading">🎙️ A voice note,  Just for You</h1>
+
+    <button id="play-btn" class="play-button">▶️ Play Message</button>
+
+    <div id="wave" class="waveform">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+
+
+
+    <audio id="voiceMsg">
+      <source src="Santa.mpeg" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <p class="hint-text">Make sure your volume is up 🔊</p>
+  </div>
+
+  <script>
+    const playBtn = document.getElementById("play-btn");
+    const audio = document.getElementById("voiceMsg");
+    const heartbeat = document.getElementById("heartbeat"); // ✅ You were missing this
+    let isPlaying = false;
+  
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        audio.pause();
+        playBtn.textContent = "▶️ Play Message";
+      } else {
+        audio.play();
+        playBtn.textContent = "⏸️ Pause";
+      }
+    });
+  
+    audio.onplaying = () => {
+      isPlaying = true;
+      heartbeat.style.display = "block"; // ✅ this now works
+    };
+  
+    audio.onpause = () => {
+      isPlaying = false;
+      heartbeat.style.display = "none";
+    };
+  </script>
+  
+
+  <a href="feedback.html" class="feedback-link">
+    <button class="feedback-btn">💌 Leave a Message</button>
+  </a>
+  
+  
+</body>
+</html>
