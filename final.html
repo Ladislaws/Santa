@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just for You, Santa 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body class="final-page">
+  <div class="message-box">
+    <p id="final-message"></p>
+    <div class="heart">&#10084;</div>
+  </div>
+
+  <div class="leaf-container">
+    <div class="leaf"></div>
+    <div class="leaf delay1"></div>
+    <div class="leaf delay2"></div>
+    <div class="leaf delay3"></div>
+  </div>
+  
+  <div class="firefly-container">
+    <div class="firefly" style="top:90%; left:10%; animation-delay:0s;"></div>
+    <div class="firefly" style="top:95%; left:30%; animation-delay:1s;"></div>
+    <div class="firefly" style="top:100%; left:50%; animation-delay:2s;"></div>
+    <div class="firefly" style="top:105%; left:70%; animation-delay:3s;"></div>
+    <div class="firefly" style="top:110%; left:90%; animation-delay:4s;"></div>
+    <div class="firefly" style="top:115%; left:20%; animation-delay:5s;"></div>
+    <div class="firefly" style="top:90%; left:10%; animation-delay:0s;"></div>
+    <div class="firefly" style="top:95%; left:30%; animation-delay:1s;"></div>
+    <div class="firefly" style="top:100%; left:50%; animation-delay:2s;"></div>
+    <div class="firefly" style="top:105%; left:70%; animation-delay:3s;"></div>
+    <div class="firefly" style="top:110%; left:90%; animation-delay:4s;"></div>
+    <div class="firefly" style="top:115%; left:20%; animation-delay:5s;"></div>
+  </div>
+  
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+  <script>
+    // Typing animation
+    const message = `Hey Santa 🎅💖
+
+Just wanted to take a moment to say… you truly are one of the most beautiful souls I’ve ever known. Sometimes I still wonder how we got this close — but honestly, I’m just so grateful we did. You’re incredible, Santa.
+
+Your smile lights up every room, your kindness leaves a mark on everyone you meet, and your friendship? It means everything to me.
+
+I hope this birthday is as amazing as you are — and that every dream you hold close starts to bloom. ✨
+I’ve seen what you’ve been through, and yet you keep going. That’s why I believe in you, Santa — always have, always will.
+
+Never forget how special you are. I’ll always be in your corner, cheering for you 🥹💫
+Happy Birthday, Santa 🎉🎂
+With all my heart — love you,
+Your Barrel 💌`;
+
+    let i = 0;
+    const finalText = document.getElementById("final-message");
+    function typeMessage() {
+      if (i < message.length) {
+        finalText.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeMessage, 100);
+      }
+    }
+    typeMessage();
+  </script>
+
+<button class="back-btn" onclick="goToVoicePage()">🎁 Open My Gift</button>
+
+<audio id="bg-music" loop>
+  <source src="videoplayback (3)-[AudioTrimmer.com].m4a" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
+
+<script src="bg-music.js" defer></script>
+
+
+</body>
+</html>

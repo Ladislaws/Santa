@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hey Santa💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+    <div class="container">
+      <h1>Oii Santa 🎅!!</h1> <!-- 🎅 Emoji added here -->
+      <h2>In every tab i added some playlists for you, just listen please 🎧 </h2>
+      <p>Type your nickname to enter</p>
+      <p>(Don't say that you forgot 😏 )</p>
+      <input type="text" id="nickname" placeholder="Your nickname here">
+      <button onclick="checkName()">Let’s Go 🎉</button>
+      <p id="error" class="error-msg"></p>
+    </div>
+  
+    <script src="script.js"></script>
+
+    <audio id="bg-music" loop>
+      <source src="dynamite.m4a" type="audio/mp4">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <script src="bg-music.js" defer></script>
+    
+    
+  </body>
+  
+</html>
